@@ -1,0 +1,63 @@
+{% load static %}
+{% include 'base.html' %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/manage_appointment.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+{% if messages %}
+  <div class="card notification-card notification-invitation">
+    <div class="card-body">
+      {% for message in messages %}
+        <div class="card-title">{{message}}</div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+
+
+
+
+
+    <div class="main">
+        {% for app in appointments %}
+            <div class="cards">
+                <div class="title">
+                    <h2>{{app.first_name}} {{app.last_name}}</h2>
+                </div>
+                <div class="des">
+                    <h4 class="widget-49-date-day">{{app.sent_date|date:'d'}}</h4>
+                    <h4 class="widget-49-date-month">{{app.sent_date|date:'M'}}</h4>
+                    <h4>{{app.request}}</h4>
+                    {% if app.accepted == False %}
+                        <form method="POST" action="{% url 'manage_appointments' %}">
+                           {% csrf_token %}
+                            <div class="form-group">
+                                <input type="date" name="date" class="form-control mb-2" 
+                                  placeholder="dd-mm-yyyy" value=""
+                                  min="1997-01-01" max="2030-12-31">
+                                <input hidden='true' name='appointment_id' value="{{app.id}}">
+                                <button type="submit">Accept</button>
+                               
+                            </div>
+                        </form>
+                    {% endif %} 
+                </div>
+                
+            </div>    
+        {% endfor %} 
+        <div>
+           <button type="submit"><a href="{% url 'home' %}" style="color:#fff;">Back To Home</a></button>
+        </div>
+    </div>
+
+
+
+                
+
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit';
+    background: linear-gradient(#bbe4e9, #e3f6f5);
+}
+
+.manage-success-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.title-left h4 {
+    font-weight: 600;
+    color: #113f67;
+    font-size: 30px;
+    margin-bottom: 5px;
+
+}

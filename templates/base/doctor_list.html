@@ -1,0 +1,34 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block style %}
+   <link rel="stylesheet" href="{% static 'css/doctors_list.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+<div class="main">
+   {% for doctor in doctors %}
+      <div class="cards">
+         <div class="image">
+            {% if doctor.image %}
+               <img src="{{doctor.image.url}}">
+            {% endif %}
+
+
+         </div>
+         <div class="title">
+            <h2> Dr. {{doctor.first_name}} {{doctor.last_name}}</h2>
+         </div>
+         <div class="des">
+           <h4>{{doctor.specialist}}</h4>
+         </div>
+      </div>
+   {% endfor %}
+</div>
+  
+
+
+
+{% endblock content %}
+    

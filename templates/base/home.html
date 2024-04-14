@@ -1,0 +1,38 @@
+{% load static %}
+{% include 'base.html' %}
+
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock style %}
+
+{% block content %}
+
+
+<div class="banner">
+    <div class="navbar">
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'doctors_list' %}">Docotr List</a></li>
+            <li><a href="{% url 'appointment' %}">Book an appointment</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'manage_appointments' %}">Manage appointments</a></li>
+            {% endif %}
+            
+            <span class="badge badge-danger">2</span> 
+        </ul>
+    </div>
+</div>
+    <div class="content">
+        <h1>BOOK AN APPOINTMENT</h1>
+        <P>You can book an appointment with any specialist you want,<br> and you will get answer as soon as possible</P>
+        <div>
+            <button><a href="{% url 'doctors_list' %}" style="color:white;"><span></span>SEE OUR DOCTORS</a></button>
+            <button><a href="{% url 'appointment' %}" style="color:white;"><span></span>BOOK AN APPOINTMENT</a></button>
+        </div>
+    </div>
+
+
+{% endblock content %}

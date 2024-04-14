@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit';
+    background: linear-gradient(#bbe4e9, #e3f6f5);
+}
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.login-left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.login-left-title h2 {
+    font-weight: 600;
+    color: #113f67;
+    font-size: 40px;
+    margin-bottom: 5px;
+
+}
+
+.login-left-title hr {
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #113f67;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.login-inputs {
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #27296d;
+    border-radius: 50px;
+}
+
+.login-left button {
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #00204a;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #ffcbcb,  #79c2d0);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+

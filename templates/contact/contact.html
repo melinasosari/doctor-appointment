@@ -1,0 +1,31 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+    <div class="contact-container">
+        <form method="POST" class="contact-left" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <div class="contact-left-title">
+                <h2>Contact With Us</h2>
+                <hr>
+            </div>
+            <input type="text" name="name" placeholder="Enter You Name Please..." class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Enter Your Email Please..." class="contact-inputs" required>
+            <textarea name="message" placeholder="Enter Your Message Please..." class="contact-inputs" required></textarea>
+            <button type="submit"><img src="{% static 'images/arrow_icon.png' %}" alt="">Submit</button>
+            <button type="submit"><a href="{% url 'home' %}" style="color:#00204a;">Back To Home</a></button>
+        </form>
+        <div class="contact-right">
+            <img src="{% static 'images/right_img.png' %}" alt="">
+
+        </div>
+    </div>
+
+        
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/manage_success.css' %}">
+{% endblock style %}
+
+{% block content %}
+    <div class="manage-success-container">
+        <div class="title-left">
+                <h4>Thank you Doctor, we will email customer the appointment date.</h4>
+                <button type="submit"><a href="{% url 'home' %}" style="color:#00204a;">Back To Home</a></button>
+        </div>
+    </div>
+                
+
+{% endblock content %}

@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit';
+  background: #bbe4e9;
+}
+
+.manage-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.manage-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+
+.manage-left-title h3 {
+  font-weight: 600;
+  color: #113f67;
+  font-size: 40px;
+  margin-bottom: 305px;
+  margin-right: 200px;
+  margin-left: 450px;
+  
+
+}
+
+.cards {
+  width: 30%;
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  margin: 40px;
+  box-shadow: 2px 2px 10px black;
+ 
+}
+
+
+.title {
+  text-align: center;
+  padding: 5px;
+}
+
+.des {
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 25px;
+}
+
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: pink;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+  color:black;
+  font-size: 17px;
+}
+
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+

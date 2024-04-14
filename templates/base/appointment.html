@@ -1,0 +1,46 @@
+{% load static %}
+{% include 'base.html' %}
+
+{% block style %}
+   <link rel="stylesheet" href="{% static 'css/appointment.css' %}">
+{% endblock style %}
+
+
+{% block content %}
+
+    {% if messages %}
+        <div class="card notification-card notification-invitation">
+            <div class="card-body">
+                {% for message in messages %}
+                    <div class="card-title">{{message}}</div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+
+
+
+
+
+    <div class="appointment-container">
+        <form method="POST" class="appointment-left" action="{% url 'appointment' %}">
+            {% csrf_token %}
+            <div class="appointment-left-title">
+                <h2>Book An Appointment</h2>
+                <hr>
+            </div>
+            <input type="text" name="first_name" placeholder="Enter Your First Name here..." class="appointment-inputs" required>
+            <input type="text" name="last_name" placeholder="Enter Your Last Name here..." class="appointment-inputs" required>
+            <input type="text" name="doctor_name" placeholder="Enter Name Of Doctor here..." class="appointment-inputs" required>
+            <input type="email" name="email" placeholder="Enter Your Email here..." class="appointment-inputs" required>
+            <textarea type="text" name="message" placeholder="Enter Your request here..." class="appointment-inputs" required></textarea>
+            <button type="submit">Send</button>
+            <!--<button type="submit"><a href="{% url 'home' %}" style="color:#00204a;">Back To Home</a></button>-->
+        </form>
+
+    
+    </div>
+
+
+{% endblock content %}
